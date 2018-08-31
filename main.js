@@ -171,9 +171,6 @@ function displayImages() {
 
 
 
-
-
-
 //invoke our display images function that will display our intial 3 images
 displayImages();
  console.log(elImageContainer);
