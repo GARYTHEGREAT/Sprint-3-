@@ -80,10 +80,11 @@ function imageClicked(event) {
     else if(event.target.id === thirdImage.id){thirdImage.clicked += 1;}
 
 
+
 //invoke our display images function to display 3 new images
 displayImages();
-console.log('event target', event.target);
-console.log ('event', firstImage.clicked, secondImage.clicked, thirdImage.clicked);
+// console.log('event target', event.target);
+// console.log ('event', firstImage.clicked, secondImage.clicked, thirdImage.clicked);
 }
 
 //declare three variables that will eventually hold our image objects that are being displayed on the page
@@ -126,10 +127,32 @@ function displayImages() {
     elImageContainer.innerHTML = '';
     //create a loop that will iterate 3 times to display 3 images
     for(let i =0; i < 3; i++) {
-        //create a new img html element
-        let elImage = document.createElement('img');
         //declare a variable and assign it the value that is returned from invoking randomImage function
         let imageObject = randomImage();
+        //write conditionals that will check what iteration our for loop is on and assign our firstImage, secondImage, and thirdImage variables the value of our current image object
+        if(i === 0) {
+            firstImage = imageObject;
+        } else if(i === 1) {
+            while(imageObject.id === firstImage.id) {
+                imageObject = randomImage();
+                console.log('second while', imageObject.id);
+                
+            }
+            secondImage = imageObject;
+        } else {
+            while(imageObject.id === firstImage.id || imageObject.id === secondImage.id)
+            {
+                imageObject = randomImage();
+                console.log('third while', imageObject.id);
+            }
+            thirdImage = imageObject;
+        }
+        
+        
+        
+        //create a new img html element
+        let elImage = document.createElement('img');
+        
         //append our img tag to image container
         elImageContainer.appendChild(elImage);
         //set an id attribute to our new img element
@@ -140,15 +163,8 @@ function displayImages() {
         elImage.addEventListener('click', imageClicked);
         //increment the shown property on our current image object by 1
         imageObject.shown += 1;
-        //write conditionals that will check what iteration our for loop is on and assign our firstImage, secondImage, and thirdImage variables the value of our current image object
-        if(i === 0) {
-            firstImage = imageObject;
-        } else if(i === 1) {
-            secondImage = imageObject;
-        } else {
-            thirdImage = imageObject;
-        }
     }
+        
 }
 
 
@@ -160,5 +176,5 @@ function displayImages() {
 
 //invoke our display images function that will display our intial 3 images
 displayImages();
-console.log(elImageContainer);
-console.log('images', firstImage, secondImage, thirdImage);
+ console.log(elImageContainer);
+ console.log('images', firstImage, secondImage, thirdImage);
