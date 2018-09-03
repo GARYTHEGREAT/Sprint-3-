@@ -1,8 +1,19 @@
 h1 {
     text-align: center;
+    background-color: blanchedalmond; 
+    font-family: cursive;
+    text-transform: uppercase;
 }
 img {
-    width: 200px;
+    width: 250px;
     height: 250px;
+    background-color: blanchedalmond;
+    border-color: blueviolet;
+    padding: 0px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-raius: 100px;
+    
+     
 
 }
