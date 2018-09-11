@@ -1,19 +1,113 @@
 h1 {
     text-align: center;
-    background-color: blanchedalmond; 
-    font-family: cursive;
+    background-color: gray; 
+    font-family: url('fonts/gotthard.ttf') ;
     text-transform: uppercase;
+    /* height: 250px; */
+}
+/*header {
+
+    min-width: 1012px;
+    word-wrap: break-word;
+    ;
+    background-image: url('images/AJLogogray.png');
+    background-size: 150px; 
+
+}*/
+body {
+    min-width: 1012px;
+    word-wrap: break-word;
+    ;
+    background-image: url('images/AJLogogray.png');
+    /*background-image: url('images/jordan\ textured\ grey.jpg');*/
+   /*background-image: url('images/JordanlogoGray.jpg');*/
+   /*background-image: url('images/jordan\ wings\ gray.jpg');*/
+
+
+    background-size: 150px;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 20px;
+    
+
 }
 img {
-    width: 250px;
-    height: 250px;
-    background-color: blanchedalmond;
+    width: 350px;
+    height: 350px;
+    background-color: black;
     border-color: blueviolet;
-    padding: 0px;
-    border-radius: 100px;
-    -moz-border-radius: 100px;
-    -webkit-border-raius: 100px;
+    padding: 10px;
+    /*border-radius: 100px 100px 100px 5px;
+    /* -moz-border-radius: 100px; *
+    /* -webkit-border-raius: 100px; */
+    text-align: center;
+    transform: translate(100px, 110px);
+
     
      
 
+
 }
+
+#image-container { text-align: center;
+
+}
+
+#chartCanvas {
+    width: 1200px;
+    height: 800px;
+    text-align: right;
+    
+}
+
+.photobanner {
+     -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation:  bannermove 30s linear infinite;
+    -ms-animation: bannermove 30s linear infinite; 
+    -o-animation: bannermove 30s linear infinite;
+    animation: bannermove 30s linear infinite;
+     min-width: 1012px;
+    word-wrap: break-word;
+    ;
+    background-image: url('images/AJLogogray.png');
+    background-size: 150px;
+} 
+
+@keyframes bannermove {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+}
+
+#container {
+    width: 2000px;
+    height: 500;
+    overflow: hidden;
+    margin: 0px auto;
+    background: white;
+
+    
+}
+
+.photobanner {
+    height: 233px;
+    width: 3550px;
+    margin-bottom: 95px;
+    margin-top: 0px;
+    position: top;
+    top: 0Px;
+    /*left:0px;
+    right:0px;
+    /* z-index: -1; */
+    
+}
+
+
+
+
+

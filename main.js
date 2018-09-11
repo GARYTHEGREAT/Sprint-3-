@@ -12,7 +12,7 @@ let BeautyImage = function(name, sex, filePath, id) {
     this.id = id;
     this.clicked = 0;
     this.shown = 0;
-    this.addClicks;a
+    this.addClicks = 0;
 };
 //check if localstorage exists
 if(localStorage.length > 0){
@@ -29,32 +29,32 @@ if(localStorage.length > 0){
     else {
         //if local storage does not exist, 
 //instantiate our constructor to create multiple instances/objects of beauty images
-let Ugly = new BeautyImage('Ugly', 'Female', './images/ugly.jpg', 'ugly');
-let Ugly1 = new BeautyImage('Ugly1', 'Female', './images/ugly1.jpg', 'ugly1');
-let Ugly2 = new BeautyImage('Ugly2', 'Male', './images/ugly2.jpg', 'ugly2');
-let Ugly3 = new BeautyImage('Ugly3', 'Male', './images/ugly3.jpg', 'ugly3');
-let Ugly4 = new BeautyImage('Ugly4', 'Male', './images/ugly4.jpg', 'ugly4');
-let Ugly5 = new BeautyImage('Ugly5', 'Male', './images/ugly5.jpg', 'ugly5');
-let Ugly6 = new BeautyImage('Ugly6', 'Female', './images/ugly6.jpg', 'ugly6');
-let Ugly7 = new BeautyImage('Ugly7', 'Female', './images/ugly7.jpg', 'ugly7');
-let Ugly8 = new BeautyImage('Ugly8', 'Female', './images/ugly8.jpg', 'ugly8');
-let Ugly9 = new BeautyImage('Ugly9', 'Female', './images/ugly9.jpg', 'ugly9');
-let Ugly10 = new BeautyImage('Ugly10', 'Male', './images/ugly10.jpg', 'ugly10');
-let Ugly11 = new BeautyImage('Ugly11', 'Male', './images/ugly11.jpg', 'ugly11');
-let Ugly12 = new BeautyImage('Ugly12', 'Male', './images/ugly12.jpg', 'ugly12');
-let Ugly13 = new BeautyImage('Ugly13', 'Male', './images/ugly13.jpg', 'ugly13');
-let Ugly14 = new BeautyImage('Ugly14', 'Male', './images/ugly14.jpg', 'ugly14');
-let Ugly15 = new BeautyImage('Ugly15', 'Male', './images/ugly15.jpg', 'ugly15');
-let Ugly16 = new BeautyImage('Ugly16', 'Female', './images/ugly16.jpg', 'ugly16');
-let Ugly17 = new BeautyImage('Ugly17', 'Male', './images/ugly17.jpg', 'ugly17');
-let Ugly18 = new BeautyImage('Ugly18', 'Female', './images/ugly18.jpg', 'ugly18');
-let Ugly19 = new BeautyImage('Ugly19', 'Male', './images/ugly19.jpg', 'ugly19');
-let Ugly20 = new BeautyImage('Ugly20', 'Female', './images/ugly20.jpg', 'ugly20');
-let Ugly21 = new BeautyImage('Ugly21', 'Male', './images/ugly21.jpg', 'ugly21');
-let Ugly22 = new BeautyImage('Ugly22', 'Male', './images/ugly22.jpg', 'ugly22');
-let Ugly23 = new BeautyImage('Ugly23', 'Male', './images/ugly23.jpg', 'ugly23');
-let Ugly24 = new BeautyImage('Ugly24', 'Male', './images/ugly24.jpg', 'ugly24');
 
+let Ranked1 = new BeautyImage('Ranked1', 'Female', './images/Ranked 1.jpg', 'Ranked1');
+let Ranked2 = new BeautyImage('Ranked2', 'Male', './images/Ranked 2.jpg', 'Ranked2');
+let Ranked3 = new BeautyImage('Ranked3', 'Male', './images/Ranked 3.jpg', 'Ranked3');
+let Ranked4 = new BeautyImage('Ranked4', 'Male', './images/Ranked 4.jpg', 'Ranked4');
+let Ranked5 = new BeautyImage('Ranked5', 'Male', './images/Ranked 5.jpg', 'Ranked5');
+let Ranked6 = new BeautyImage('Ranked6', 'Female', './images/Ranked 6.jpg', 'Ranked6');
+let Ranked7 = new BeautyImage('Ranked7', 'Female', './images/Ranked 7.jpg', 'Ranked7');
+let Ranked8 = new BeautyImage('Ranked8', 'Female', './images/Ranked 8.jpg', 'Ranked8');
+let Ranked9 = new BeautyImage('Ranked9', 'Female', './images/Ranked 9.jpg', 'Ranked9');
+let Ranked10 = new BeautyImage('Ranked10', 'Male', './images/Ranked 10.jpg', 'Ranked10');
+let Ranked11 = new BeautyImage('Ranked11', 'Male', './images/Ranked 11.jpg', 'Ranked11');
+let Ranked12 = new BeautyImage('Ranked12', 'Male', './images/Ranked 12.jpg', 'Ranked12');
+let Ranked13 = new BeautyImage('Ranked13', 'Male', './images/Ranked 13.jpg', 'Ranked13');
+let Ranked14 = new BeautyImage('Ranked14', 'Male', './images/Ranked 14.jpg', 'Ranked14');
+let Ranked15 = new BeautyImage('Ranked15', 'Male', './images/Ranked 15.jpg', 'Ranked15');
+let Ranked16 = new BeautyImage('Ranked16', 'Female', './images/Ranked 16.jpg', 'Ranked16');
+let Ranked17 = new BeautyImage('Ranked17', 'Male', './images/Ranked 17.jpg', 'Ranked17');
+let Ranked18 = new BeautyImage('Ranked18', 'Female', './images/Ranked 18.jpg', 'Ranked18');
+let Ranked19 = new BeautyImage('Ranked19', 'Male', './images/Ranked 19.jpg', 'Ranked19');
+let Ranked20 = new BeautyImage('Ranked20', 'Female', './images/Ranked 20.jpg', 'Ranked20');
+let Ranked21 = new BeautyImage('Ranked21', 'Male', './images/Ranked 21.jpg', 'Ranked21');
+let Ranked22 = new BeautyImage('Ranked22', 'Male', './images/Ranked 22.jpg', 'Ranked22');
+let Ranked23 = new BeautyImage('Ranked23', 'Male', './images/Ranked 23.jpg', 'Ranked23');
+let Ranked24 = new BeautyImage('Ranked24', 'Male', './images/Ranked 24.jpg', 'Ranked24');
+let Ranked25 = new BeautyImage('Ranked25', 'Female', './images/Ranked 25.jpg', 'Ranked25');
 
 
 
@@ -62,9 +62,9 @@ let Ugly24 = new BeautyImage('Ugly24', 'Male', './images/ugly24.jpg', 'ugly24');
 // beautyImageArray.push(Ugly, Ugly1, Ugly2, Ugly3, Ugly4, Ugly5,Ugly6, Ugly7, Ugly8, Ugly9, Ugly10, Ugly11, Ugly12, Ugly13, Ugly14, Ugly15, Ugly16, Ugly17, Ugly18, Ugly19, Ugly20, Ugly21, Ugly22, Ugly23, Ugly24);
 
 //pushour new instances/objects to our imageArray
-beautyImageArray.push(Ugly, Ugly1, Ugly2, Ugly3, Ugly4, Ugly5,Ugly6, Ugly7, Ugly8, Ugly9, Ugly10, Ugly11, Ugly12, Ugly13, Ugly14, Ugly15, Ugly16, Ugly17, Ugly18, Ugly19, Ugly20, Ugly21, Ugly22, Ugly23, Ugly24);
+beautyImageArray.push( Ranked1, Ranked2, Ranked3, Ranked4, Ranked5, Ranked6, Ranked7, Ranked8, Ranked9, Ranked10, Ranked11, Ranked12, Ranked13, Ranked14, Ranked15, Ranked16, Ranked17, Ranked18, Ranked19, Ranked20, Ranked21, Ranked22, Ranked23, Ranked24, Ranked25);
 
-};
+}
 console.log (beautyImageArray)
 
 
@@ -100,7 +100,8 @@ function imageClicked(event) {
 //everytime an image is clicked, save our beauty image array to local storage
 localStorage.setItem('storageBeautyImgArray', JSON.stringify(beautyImageArray)); 
 //invoke my chart function to display mamy data for images clicked and shown
-displayChart();}
+//displayChart();
+}
 
 
 //declare three variables that will eventually hold our image objects that are being displayed on the page
@@ -189,7 +190,7 @@ function displayImages() {
 
 
 //invoke our display images function that will display our intial 3 images
-displayImages();
+displayImages()
  //<old code>
 //console.log(elImageContainer);
 // console.log('images', firstImage, secondImage, thirdImage);
@@ -197,3 +198,27 @@ displayImages();
 
 
 
+//increment property allClicks each time any image object is clicked
+    for (let i = 0; i < beautyImageArray.length; i++){
+        beautyImageArray[i].addClicks +=1;
+    }
+    //check if number of clicks equals X then display chart
+    if (beautyImageArray[0].addClicks >= 25){
+        displayChart();
+        console.log('displayChart')
+        for (let x = 0; x < beautyImageArray.length; x++){
+            beautyImageArray[x].shown = 0;
+            beautyImageArray[x].clicked = 0;
+            beautyImageArray[x].addClicks = 0;
+        }
+        console.log('set beautyImageArray properties to zero');
+        localStorage.clear();
+    //else display three new random beauty images
+    } else {
+        localStorage.setItem('storagebeautyImageArray', JSON.stringify(beautyImageArray));
+        displayImages();
+    }
+
+
+console.log('displayImages fire');
+displayImages();

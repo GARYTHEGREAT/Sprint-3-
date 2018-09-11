@@ -24,18 +24,19 @@ function displayChart() {
     elChart.innerHTML = '';
     let myChart = new Chart(elChart, {
 //assign the property of type to be a bar chart        
-    
+   
     type: 'bar', 
     //set up our data property that will contain the labels
     
     //for our data and the varios datasets that we want displayed as bars
     data: {
         labels: populateChart('name'),
+        
         datasets: [ {
 
             label: '# of times clicked',
             data: populateChart('clicked'),
-            backgroundColor: 'gray'
+            backgroundColor: 'red'
         },
 
         {
@@ -48,6 +49,7 @@ function displayChart() {
             scales: {
                 yAxes: [{
                     ticks: {
+                        
                         beginAtZero:true
                     }
                 }]
