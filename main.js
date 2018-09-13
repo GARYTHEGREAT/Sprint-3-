@@ -99,6 +99,29 @@ function imageClicked(event) {
 
 //everytime an image is clicked, save our beauty image array to local storage
 localStorage.setItem('storageBeautyImgArray', JSON.stringify(beautyImageArray)); 
+//increment property allClicks each time any image object is clicked
+    for (let i = 0; i < beautyImageArray.length; i++){
+        beautyImageArray[i].addClicks +=1;
+    }
+    //check if number of clicks equals X then display chart
+    if (beautyImageArray[0].addClicks >= 25){
+        displayChart(); 
+        
+        console.log('displayChart')
+        for (let x = 0; x < beautyImageArray.length; x++){
+            beautyImageArray[x].shown = 0;
+            beautyImageArray[x].clicked = 0;
+
+        }
+        // console.log('set beautyImageArray properties to zero');
+        //  localStorage.clear();
+    //else display three new random beauty images
+    } else {
+        localStorage.setItem('storagebeautyImageArray', JSON.stringify(beautyImageArray));
+        displayImages();
+    }
+
+
 //invoke my chart function to display mamy data for images clicked and shown
 //displayChart();
 }
@@ -178,7 +201,13 @@ function displayImages() {
         elImage.src = imageObject.filePath;
         //attach an event listener to our new img element
         elImage.addEventListener('click', imageClicked);
-        //increment the shown property on our current image object by 1
+        
+        
+        if ('click' >= 25 ) {
+        // remove event listener `a`
+        elImage.removeEventListener('click', imageClicked);
+     }
+//increment the shown property on our current image object by 1
         imageObject.shown += 1; 
         console.log(imageObject.shown)
     }
@@ -196,28 +225,28 @@ displayImages()
 // console.log('images', firstImage, secondImage, thirdImage);
 
 
+//displayChart()
 
-
-//increment property allClicks each time any image object is clicked
-    for (let i = 0; i < beautyImageArray.length; i++){
-        beautyImageArray[i].addClicks +=1;
-    }
-    //check if number of clicks equals X then display chart
-    if (beautyImageArray[0].addClicks >= 25){
-        displayChart();
-        console.log('displayChart')
-        for (let x = 0; x < beautyImageArray.length; x++){
-            beautyImageArray[x].shown = 0;
-            beautyImageArray[x].clicked = 0;
-            beautyImageArray[x].addClicks = 0;
-        }
-        console.log('set beautyImageArray properties to zero');
-        localStorage.clear();
-    //else display three new random beauty images
-    } else {
-        localStorage.setItem('storagebeautyImageArray', JSON.stringify(beautyImageArray));
-        displayImages();
-    }
+// //increment property allClicks each time any image object is clicked
+  //   for (let i = 0; i < beautyImageArray.length; i++){
+ //        beautyImageArray[i].addClicks +=1;
+//     }
+//     //check if number of clicks equals X then display chart
+//     if (beautyImageArray[0].addClicks >= 25){
+//         displayChart();
+//         console.log('displayChart')
+//         for (let x = 0; x < beautyImageArray.length; x++){
+//             beautyImageArray[x].shown = 0;
+//             beautyImageArray[x].clicked = 0;
+//             beautyImageArray[x].addClicks = 0;
+//         }
+//         console.log('set beautyImageArray properties to zero');
+//         localStorage.clear();
+//     //else display three new random beauty images
+//     } else {
+//         localStorage.setItem('storagebeautyImageArray', JSON.stringify(beautyImageArray));
+//         displayImages();
+//     }
 
 
 console.log('displayImages fire');
