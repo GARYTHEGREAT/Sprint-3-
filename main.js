@@ -3,6 +3,7 @@ let beautyImageArray = [];
 // findour image container element using document.getElementById
 let elImageContainer = document.getElementById('image-container'); 
 console.log(beautyImageArray)
+let totalClicks = 0;
 
 //create an object constructor that will take in parameters, and store properties of an image
 let BeautyImage = function(name, sex, filePath, id) {
@@ -82,11 +83,17 @@ function randomImage() {
 function imageClicked(event) {
     //if the id of target html element matches the first, second or third images objects, increment that objects clicked property by !
     if(event.target.id === firstImage.id) 
-    {firstImage.clicked += 1;}
+    {firstImage.clicked += 1;
+    totalClicks +=1;
+    }
     else if(event.target.id === secondImage.id)
-    {secondImage.clicked += 1;}
+    {secondImage.clicked += 1;
+    totalClicks +=1;
+    }
     else if(event.target.id === thirdImage.id)
-    {thirdImage.clicked += 1;}
+    {thirdImage.clicked += 1;
+    totalClicks +=1;
+    }
 
 
 //<old Code>
@@ -99,6 +106,8 @@ function imageClicked(event) {
 
 //everytime an image is clicked, save our beauty image array to local storage
 localStorage.setItem('storageBeautyImgArray', JSON.stringify(beautyImageArray)); 
+localStorage.setItem('storageTotalClicks', JSON.stringify(totalClicks)); 
+
 //increment property allClicks each time any image object is clicked
     for (let i = 0; i < beautyImageArray.length; i++){
         beautyImageArray[i].addClicks +=1;
@@ -202,9 +211,9 @@ function displayImages() {
         //attach an event listener to our new img element
         elImage.addEventListener('click', imageClicked);
         
-        
-        if ('click' >= 25 ) {
-        // remove event listener `a`
+
+        if (totalClicks >= 25 ) {
+        // remove event listener l
         elImage.removeEventListener('click', imageClicked);
      }
 //increment the shown property on our current image object by 1
