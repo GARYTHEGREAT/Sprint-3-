@@ -1,8 +1,8 @@
 // declare a variable and assign the value of an empty array that will hold all of our objects.
 let beautyImageArray = [];
 // findour image container element using document.getElementById
-let elImageContainer = document.getElementById('image-container');
-
+let elImageContainer = document.getElementById('image-container'); 
+console.log(beautyImageArray)
 
 //create an object constructor that will take in parameters, and store properties of an image
 let BeautyImage = function(name, sex, filePath, id) {
@@ -12,9 +12,22 @@ let BeautyImage = function(name, sex, filePath, id) {
     this.id = id;
     this.clicked = 0;
     this.shown = 0;
-    this.addClicks;
+    this.addClicks;a
 };
+//check if localstorage exists
+if(localStorage.length > 0){
+    //retrieve store beauty image array fro local storage tht contains our clicks
+    //and shown
+    
+    let getData = localStorage.getItem('storageBeautyImgArray');
 
+    //reassign the value of beautyImageArray to the parsed version of beauty image array that we stored in local 
+    //storage
+    beautyImageArray = JSON.parse(getData);
+    console.log(beautyImageArray)
+    }
+    else {
+        //if local storage does not exist, 
 //instantiate our constructor to create multiple instances/objects of beauty images
 let Ugly = new BeautyImage('Ugly', 'Female', './images/ugly.jpg', 'ugly');
 let Ugly1 = new BeautyImage('Ugly1', 'Female', './images/ugly1.jpg', 'ugly1');
@@ -46,20 +59,13 @@ let Ugly24 = new BeautyImage('Ugly24', 'Male', './images/ugly24.jpg', 'ugly24');
 
 
 //push our new instances/objects to our imageArray
+// beautyImageArray.push(Ugly, Ugly1, Ugly2, Ugly3, Ugly4, Ugly5,Ugly6, Ugly7, Ugly8, Ugly9, Ugly10, Ugly11, Ugly12, Ugly13, Ugly14, Ugly15, Ugly16, Ugly17, Ugly18, Ugly19, Ugly20, Ugly21, Ugly22, Ugly23, Ugly24);
+
+//pushour new instances/objects to our imageArray
 beautyImageArray.push(Ugly, Ugly1, Ugly2, Ugly3, Ugly4, Ugly5,Ugly6, Ugly7, Ugly8, Ugly9, Ugly10, Ugly11, Ugly12, Ugly13, Ugly14, Ugly15, Ugly16, Ugly17, Ugly18, Ugly19, Ugly20, Ugly21, Ugly22, Ugly23, Ugly24);
 
-
-
-
-
-
-
-
-
-
-
-
-
+};
+console.log (beautyImageArray)
 
 
 
@@ -75,16 +81,27 @@ function randomImage() {
 //define event handler function that will increment the times clicked for the firstImage
 function imageClicked(event) {
     //if the id of target html element matches the first, second or third images objects, increment that objects clicked property by !
-    if(event.target.id ===firstImage.id) {firstImage.clicked += 1;}
-    else if(event.target.id === secondImage.id){secondImage.clicked += 1;}
-    else if(event.target.id === thirdImage.id){thirdImage.clicked += 1;}
+    if(event.target.id === firstImage.id) 
+    {firstImage.clicked += 1;}
+    else if(event.target.id === secondImage.id)
+    {secondImage.clicked += 1;}
+    else if(event.target.id === thirdImage.id)
+    {thirdImage.clicked += 1;}
 
 
+//<old Code>
 //invoke our display images function to display 3 new images
-displayImages();
-console.log('event target', event.target);
-console.log ('event', firstImage.clicked, secondImage.clicked, thirdImage.clicked);
-}
+// console.log('event target', event.target);
+//  console.log ('event', firstImage.clicked, secondImage.clicked, thirdImage.clicked);
+ displayImages();
+// }
+// </old Code>
+
+//everytime an image is clicked, save our beauty image array to local storage
+localStorage.setItem('storageBeautyImgArray', JSON.stringify(beautyImageArray)); 
+//invoke my chart function to display mamy data for images clicked and shown
+displayChart();}
+
 
 //declare three variables that will eventually hold our image objects that are being displayed on the page
 let firstImage; 
@@ -126,10 +143,32 @@ function displayImages() {
     elImageContainer.innerHTML = '';
     //create a loop that will iterate 3 times to display 3 images
     for(let i =0; i < 3; i++) {
-        //create a new img html element
-        let elImage = document.createElement('img');
         //declare a variable and assign it the value that is returned from invoking randomImage function
         let imageObject = randomImage();
+        //write conditionals that will check what iteration our for loop is on and assign our firstImage, secondImage, and thirdImage variables the value of our current image object
+        if(i === 0) {
+            firstImage = imageObject;
+        } else if(i === 1) {
+            while(imageObject.id === firstImage.id) {
+                imageObject = randomImage();
+                console.log('second while', imageObject.id);
+                
+            }
+            secondImage = imageObject;
+        } else {
+            while(imageObject.id === firstImage.id || imageObject.id === secondImage.id)
+            {
+                imageObject = randomImage();
+                console.log('third while', imageObject.id);
+            }
+            thirdImage = imageObject;
+        }
+        
+        
+        
+        //create a new img html element
+        let elImage = document.createElement('img');
+        
         //append our img tag to image container
         elImageContainer.appendChild(elImage);
         //set an id attribute to our new img element
@@ -139,20 +178,11 @@ function displayImages() {
         //attach an event listener to our new img element
         elImage.addEventListener('click', imageClicked);
         //increment the shown property on our current image object by 1
-        imageObject.shown += 1;
-        //write conditionals that will check what iteration our for loop is on and assign our firstImage, secondImage, and thirdImage variables the value of our current image object
-        if(i === 0) {
-            firstImage = imageObject;
-        } else if(i === 1) {
-            secondImage = imageObject;
-        } else {
-            thirdImage = imageObject;
-        }
+        imageObject.shown += 1; 
+        console.log(imageObject.shown)
     }
+        
 }
-
-
-
 
 
 
@@ -160,5 +190,10 @@ function displayImages() {
 
 //invoke our display images function that will display our intial 3 images
 displayImages();
-console.log(elImageContainer);
-console.log('images', firstImage, secondImage, thirdImage);
+ //<old code>
+//console.log(elImageContainer);
+// console.log('images', firstImage, secondImage, thirdImage);
+
+
+
+
